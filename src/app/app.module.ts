@@ -4,6 +4,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/authentication.service';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
@@ -23,11 +24,13 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    ReactiveFormsModule,
+        AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
     AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
