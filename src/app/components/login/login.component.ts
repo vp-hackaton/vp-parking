@@ -14,9 +14,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   constructor(private auth:AuthenticationService) {
-    localStorage.setItem("userSession", "");
-    localStorage.setItem("isAuthenticated", "false");
-
+       localStorage.clear();
 
    }
 
