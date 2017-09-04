@@ -24,15 +24,13 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    ReactiveFormsModule
-=======
-    AngularFireModule.initializeApp(firebaseConfig)
->>>>>>> develop
+    ReactiveFormsModule,
+        AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
     AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
