@@ -3,15 +3,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { AssignedComponent } from './components/assigned/assigned.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+//AngularFire
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AssignedComponent } from './components/assigned/assigned.component';
+import { AngularFireDatabase } from 'angularfire2/database';
+
 
 //Services
 import { AuthenticationService } from './services/authentication.service';
 import { UsersService } from "./services/users.service";
+import { ParkingService } from "./services/parking.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAY7lqosjirUpzvMTaas2Ht1Y8Xn7DrWoc",
@@ -32,11 +36,13 @@ export const firebaseConfig = {
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-        AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
     AuthenticationService,
-    AngularFireAuth
+    AngularFireAuth,
+    AngularFireDatabase,
+    ParkingService
   ],
   bootstrap: [AppComponent]
 })

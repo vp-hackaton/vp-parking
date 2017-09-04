@@ -5,39 +5,17 @@
 <table class="table">
   <thead>
     <tr>
-      <th>#</th>
       <th>Nombre</th>
       <th>Vehículo</th>
       <th>Placa</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Adrian Moya</td>
-      <td>Chevrolet Tracker</td>
-      <td>JBQ-454</td>
+    <tr *ngFor="let user of monthlyUsers | async">
+      <td>{{user.email}}</td>
+      <td>{{user.model}}</td>
+      <td>{{user.plate}}</td>
     </tr>
   </tbody>
 </table>
 
-<h2>Usuarios adicionales</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Nombre</th>
-      <th>Vehículo</th>
-      <th>Placa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Adrian Moya</td>
-      <td>Chevrolet Tracker</td>
-      <td>JBQ-454</td>
-    </tr>
-  </tbody>
-</table>

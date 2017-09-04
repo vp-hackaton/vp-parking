@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingService } from '../../services/parking.service';
+import { UserAssigned } from '../../model/UserAssigned.type';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-assigned',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignedComponent implements OnInit {
 
-  constructor() { }
+  monthlyUsers: FirebaseListObservable<UserAssigned[]>;
+
+  constructor(private parkingService: ParkingService) { }
 
   ngOnInit() {
+    this.monthlyUsers = this.parkingService.getMonthlyUsers();
+    console.log(this.monthlyUsers);
   }
 
 }
