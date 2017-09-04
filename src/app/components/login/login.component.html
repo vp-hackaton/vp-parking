@@ -1,17 +1,22 @@
 <div class="container">
     <h1>Ingresa a VP-Parking</h1>
 
-
-
 <form [formGroup]="heroForm" novalidate>
   <div class="form-group">
-    <label class="center-block">Name:
+    <label class="center-block">Username:
       <input class="form-control" formControlName="name">
+    </label>
+    <label class="center-block">Password:
+      <input class="form-control" type="password" formControlName="password">
     </label>
   </div>
 </form>  
 
-<button (click)="login()">Ok</button>
+<p>Form value: {{ heroForm.value | json }}</p>
+<p>Form status: {{ heroForm.status | json }}</p>
+
+
+
 </div>
 
 
