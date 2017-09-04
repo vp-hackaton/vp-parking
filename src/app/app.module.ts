@@ -12,6 +12,7 @@ import { AssignedComponent } from './components/assigned/assigned.component';
 //Services
 import { AuthenticationService } from './services/authentication.service';
 import { UsersService } from "./services/users.service";
+import { MainComponent } from './components/main/main.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAY7lqosjirUpzvMTaas2Ht1Y8Xn7DrWoc",
@@ -26,7 +27,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     LoginComponent,
-    AssignedComponent
+    AssignedComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
