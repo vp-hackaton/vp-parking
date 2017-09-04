@@ -10,11 +10,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 
 
+
 export class LoginComponent implements OnInit {
 
-  // constructor(private auth:AuthenticationService) { }
+  constructor(private auth:AuthenticationService) { }
 
-    constructor() { }
 
 
   ngOnInit() {
@@ -26,7 +26,10 @@ export class LoginComponent implements OnInit {
     password: new FormControl()
   });
 
-  login(userName){
-    console.log("Hola; " + userName);
+  isLoggin = '';
+
+  onClickMe() {
+    this.auth.login("", "");
   }
+
 }
