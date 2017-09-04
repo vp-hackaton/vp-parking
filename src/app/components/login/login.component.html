@@ -1,3 +1,17 @@
-<p>
-  login works!
-</p>
+<div class="container">
+    <h1>Ingresa a VP-Parking</h1>
+
+
+
+<form [formGroup]="heroForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+</form>  
+
+<button (click)="login()">Ok</button>
+</div>
+
+
