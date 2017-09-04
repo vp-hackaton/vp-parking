@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthenticationService {
 
- booleanAuthenticated = false;
+ booleanAuthenticated;
+ userName = "";
 
  constructor(
     private afAuth: AngularFireAuth,
@@ -20,7 +21,17 @@ export class AuthenticationService {
   login(username: string, password: string) {
     // this.afAuth.auth.signInWithEmailAndPassword(username, password)
     this.booleanAuthenticated = true;
-    this.router.navigateByUrl('assigned');
+    localStorage.setItem("isAuthenticated", this.booleanAuthenticated);
+    localStorage.setItem("userSession", username);
+
+    this.router.navigateByUrl('main');    
+
+
+    this.userName = username;
+  }
+
+  getAuthenticatedUser() {
+    return this.userName;
   }
 
   logout(){

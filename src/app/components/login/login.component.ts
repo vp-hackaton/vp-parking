@@ -13,7 +13,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private auth:AuthenticationService) { }
+  constructor(private auth:AuthenticationService) {
+    localStorage.setItem("userSession", "");
+    localStorage.setItem("isAuthenticated", "false");
+
+
+   }
 
 
 
@@ -28,8 +33,8 @@ export class LoginComponent implements OnInit {
 
   isLoggin = '';
 
-  onClickMe() {
-    this.auth.login("", "");
+  onClickMe(userInfo) {
+    this.auth.login(userInfo.name, "");
   }
 
 }
