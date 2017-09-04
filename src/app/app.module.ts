@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAY7lqosjirUpzvMTaas2Ht1Y8Xn7DrWoc",
@@ -28,7 +29,8 @@ export const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })
