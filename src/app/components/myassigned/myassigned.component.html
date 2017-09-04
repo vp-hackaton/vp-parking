@@ -1,3 +1,18 @@
-<p>
-  myassigned works!
-</p>
+<h2>Mis asignaciones del parqueadero</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of monthlyUsers | async">
+      <td>
+        <div *ngFor="let day of user.days">
+          {{day}}
+        </div>
+        </td>
+    </tr>
+  </tbody>
+</table>

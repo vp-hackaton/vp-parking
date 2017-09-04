@@ -15,4 +15,13 @@ export class ParkingService {
     });
   }
 
+  getUserAssignmentsByEmail(email: string) {
+    return this.db.list('user_assigned', {
+      query: {
+        orderByChild: 'email',
+        equalTo: email
+      }
+    });
+  }
+
 }
