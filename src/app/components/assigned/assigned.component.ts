@@ -11,12 +11,13 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class AssignedComponent implements OnInit {
 
   monthlyUsers: FirebaseListObservable<UserAssigned[]>;
+  additionalUsers: FirebaseListObservable<UserAssigned[]>;
 
   constructor(private parkingService: ParkingService) { }
 
   ngOnInit() {
     this.monthlyUsers = this.parkingService.getMonthlyUsers();
-    console.log(this.monthlyUsers);
+    this.additionalUsers = this.parkingService.getAdditionalAssignedUsers();
   }
 
 }

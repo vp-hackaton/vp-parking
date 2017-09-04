@@ -24,7 +24,7 @@ export class AuthenticationService {
     localStorage.setItem("isAuthenticated", this.booleanAuthenticated);
     localStorage.setItem("userSession", username);
 
-    this.router.navigateByUrl('main');    
+    this.router.navigateByUrl('main');
 
 
     this.userName = username;

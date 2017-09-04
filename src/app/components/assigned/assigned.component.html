@@ -19,3 +19,24 @@
   </tbody>
 </table>
 
+<h2>Usuarios adicionales</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Vehículo</th>
+      <th>Placa</th>
+      <th>Días</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of additionalUsers | async">
+      <td>{{user.email}}</td>
+      <td>{{user.model}}</td>
+      <td>{{user.plate}}</td>
+      <td>{{user.days}}</td>
+    </tr>
+  </tbody>
+</table>
+

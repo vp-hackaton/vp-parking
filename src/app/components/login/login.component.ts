@@ -8,21 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 
-
-
-
 export class LoginComponent implements OnInit {
-
-  constructor(private auth:AuthenticationService) {
-       localStorage.clear();
-
-   }
-
-
-
-  ngOnInit() {
-    console.log('Hello');
-  }
 
   heroForm = new FormGroup ({
     name: new FormControl(),
@@ -30,6 +16,14 @@ export class LoginComponent implements OnInit {
   });
 
   isLoggin = '';
+
+  constructor(private auth: AuthenticationService) {
+       localStorage.clear();
+
+   }
+
+  ngOnInit() {  }
+
 
   onClickMe(userInfo) {
     this.auth.login(userInfo.name, "");
