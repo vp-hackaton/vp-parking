@@ -4,15 +4,18 @@ import { AngularFireAuth } from 'angularfire2/auth';
 @Injectable()
 export class AuthenticationService {
 
- 
-  constructor(public afAuth: AngularFireAuth) { }
+ booleanAuthenticated = false;
+
+ constructor(public afAuth: AngularFireAuth) { }
 
   isAuthenticated(){
-    this.afAuth.authState;
+    // this.afAuth.authState;
+    return this.booleanAuthenticated;
   }
 
   login(username: string, password: string){
-    this.afAuth.auth.signInWithEmailAndPassword(username, password)
+    // this.afAuth.auth.signInWithEmailAndPassword(username, password)
+    this.booleanAuthenticated = true;
   }
 
   logout(){
