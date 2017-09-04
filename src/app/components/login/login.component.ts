@@ -10,19 +10,26 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 
 
+
 export class LoginComponent implements OnInit {
 
   constructor(private auth:AuthenticationService) { }
+
+
 
   ngOnInit() {
     console.log('Hello');
   }
 
   heroForm = new FormGroup ({
-    name: new FormControl()
+    name: new FormControl(),
+    password: new FormControl()
   });
 
-  login(){
-    console.log("Hola; " + name);
+  isLoggin = '';
+
+  onClickMe() {
+    this.auth.login("", "");
   }
+
 }
