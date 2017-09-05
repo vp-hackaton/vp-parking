@@ -1,2 +1,2 @@
-<h1 >Bienvenido {{getAuthenticatedUser()}}</h1>
-<h2 >Mes de Septiembre</h2>
+<h1 *ngIf="isAuthenticated()">Bienvenido {{getAuthenticatedUser()}}</h1>
+

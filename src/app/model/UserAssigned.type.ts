@@ -4,5 +4,5 @@ export interface UserAssigned {
     is_monthly: boolean;
     model: string;
     plate: string;
-    days: Date[];
+    days: string[];
 }

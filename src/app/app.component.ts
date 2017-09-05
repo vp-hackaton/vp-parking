@@ -15,7 +15,6 @@ export class AppComponent {
   }
 
   check() {
-    console.log("Checking loggin: ", localStorage.getItem('isAuthenticated'));
     return (localStorage.getItem('isAuthenticated') == "true") ? true : false;
   }
 

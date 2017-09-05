@@ -16,4 +16,8 @@ export class MainComponent implements OnInit {
     return localStorage.getItem("userSession");
   }
 
+  isAuthenticated() {
+    return localStorage.getItem('userSession') ? true : false;
+  }
+
 }
